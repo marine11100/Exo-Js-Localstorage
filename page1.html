@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+    <form action="" name="formulaire">
+        <label for="nom">Nom de votre couleur  : </label><input type="text" id="nom" name="nom" value="toto" />
+        <label for="color">Choisissez votre couleur  : </label><input type="color" id="couleur" name="couleur" value="fff">
+        <button type="button" name="page2" id="button" value="page2">valider</button>
+    </form>
+    <script>
+
+        var ele = document.getElementById('button');
+        ele.addEventListener('click', function (event){
+            var nom= document.getElementById('nom').value;
+            var couleur= document.getElementById('couleur').value;
+            localStorage.setItem(1, nom);
+            localStorage.setItem(2, couleur);
+            window.open('page2.html');
+            console.log(nom, couleur);
+
+        }   )
+        document.getElementById('button').addEventListener('click', compteur);
+        function compteur(){
+            if(localStorage.getItem('cliquer',nombre)==null){
+                var nombre=0;
+                nombre++;
+                localStorage.setItem('cliquer', nombre);
+            }
+            else{
+                var nombre=localStorage.getItem('cliquer', nombre);
+                nombre++;
+                localStorage.setItem('cliquer', nombre);
+            }
+        }
+    </script>
+    
+
+    
+</body>
+</html>
